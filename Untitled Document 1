@@ -1,0 +1,53 @@
+push('$');
+push('A');
+printf("STACK                                               INPUTDATA");
+while(1)
+{
+	printf("\n");
+	display();
+	printf(" ------------------------------------- ");
+	inputdisplay();
+	if(stk[top]=='$'&&input[ip]=='$')
+	{
+		flag=1;
+		printf("\nSuccessful parser");
+		break;
+	}
+	else if(stk[top]==input[ip]) 
+	{
+		ip++;
+		pop(); 
+	}
+	else if(stk[top]=='A') 
+	{
+		if(input[ip]=='a') 
+		{
+			pop();
+			push('a');
+			push('B');
+			push('a');
+		 }
+		else
+			break;
+	}
+	else if(stk[top]=='B') 
+	{
+		if(input[ip]=='b') 
+		{
+			pop();
+			push('B');
+			push('b');
+			
+		 }
+		else if(input[ip]=='a') 
+		{
+			pop(); 
+		}
+		else
+			break;
+	}
+
+
+		break;
+}
+
